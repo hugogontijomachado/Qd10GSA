@@ -1,5 +1,9 @@
+[![DOI](https://zenodo.org/badge/doi/10.1016/j.ecolmodel.2020.109127.svg)](https://www.sciencedirect.com/science/article/abs/pii/S030438002030199X?via%3Dihub)
+
 # Qd10GSA
 Qd10GSA is a multi-platform application and is written in Python3 and Fortran, it is a free code compatible with Windows, Linux, and MacOS platforms. 
+
+<img src="/doc/Qd10.gif?raw=true" align="center">
 
 <b> INSTALLATION STEPS </b><br />
 Follow these general installation and configuration steps:

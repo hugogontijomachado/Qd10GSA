@@ -490,29 +490,26 @@ class Fitting(Tk):
 
         if platform.system() == 'Windows':
             os.system('GSADriverWin.exe')
-            try:
-                os.system('del GSADriverLin.exe')
-                os.system('del GSADriverMac.exe')
-                os.system('del GetPermission.sh')
-            except:
-                pass
+            filesToExclude = ['GSADriverLin.exe', 'GSADriverMac.exe', 'GetPermission.sh']
+            for file in filesToExclude:
+                if os.path.exists(file):
+                    os.system('del {}'.format(file))
 
         if platform.system() == 'Linux':
             os.system('./GSADriverLin.exe')
-            try:
-                os.system('rm ./GSADriverWin.exe')
-                os.system('rm ./GSADriverMac.exe')
-            except:
-                pass
+            filesToExclude = ['./GSADriverWin.exe', './GSADriverMac.exe']
+            for file in filesToExclude:
+                if os.path.exists(file):
+                    os.system('rm {}'.format(file))
 
         if platform.system() == 'Darwin':
             os.system('./GSADriverMac.exe')
-            try:
-                os.system('rm GSADriverWin.exe')
-                os.system('rm GSADriverLin.exe')
-            except:
-                pass
 
+            filesToExclude = ['GSADriverWin.exe', 'GSADriverLin.exe']
+            for file in filesToExclude:
+                if os.path.exists(file):
+                    os.system('rm {}'.format(file))
+                    
         ###########################################
         ### Extract X_Min
         gsa_in = open('GSA.in','r')
